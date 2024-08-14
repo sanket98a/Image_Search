@@ -1,0 +1,5 @@
+kivymd==1.2.0
+kivy==2.3.0
+langchain_community==0.015
+transformers==4.34.1
+pillow==9.5.0
