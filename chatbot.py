@@ -14,11 +14,13 @@ import time
 Window.size=(350,550)
 
 
-    
+
 obj=MultiModel()
+embeddings=obj.model
 
 if os.path.exists("animals.vdb"):
-    db=FAISS.load_local(folder_path="animals.vdb",embeddings=None)
+    # db=FAISS.load_local(folder_path="animals.vdb",embeddings=None)
+    db=FAISS.load_local("animals.vdb",embeddings)
 else:
     db=obj.create_vector_db("Images")
     # Define the filename for the vector database

@@ -12,7 +12,7 @@ from transformers import AutoModel
 class MultiModel():
     
     def __init__(self):
-        pass
+        self.model=self.jinaai_embedding()
     
     def jinaai_embedding(self):
         # Initialize the model
@@ -21,14 +21,14 @@ class MultiModel():
     
     # This function takes a file path as input and returns a vector representation of the content
     def get_vector_from_file(self,file_path=None,input_text=None):
-        model=self.jinaai_embedding()
+        # model=self.jinaai_embedding()
         # If input_text is provided, add it to the request body with the key "inputText"
         if input_text:
-            embedding = model.encode_text(input_text)
+            embedding = self.model.encode_text(input_text)
 
         # If input_image_base64 is provided, add it to the request body with the key "inputImage"
         if file_path:
-            embedding = model.encode_image(file_path)
+            embedding = self.model.encode_image(file_path)
 
         # Returns the generated vector
         return embedding
