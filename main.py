@@ -2,7 +2,7 @@ from app import MultiModel
 import os
 from langchain_community.vectorstores import FAISS
 import time
-
+# import streamlit as st
 
 obj=MultiModel()
 embeddings=obj.model
